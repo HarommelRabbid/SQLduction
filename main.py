@@ -68,7 +68,7 @@ class Queryduction:
                         sys.stdout.write(f'Table "{tokenizer[1]}" has been deleted\n')
                 case 'LIST':
                     @lru_cache
-                    def lmlist():
+                    def tablelist():
                         if len(tokenizer) > 2:
                             self.error('Too many arguments')
                         else:
@@ -88,7 +88,7 @@ class Queryduction:
                                     sys.stdout.write(f"Items of {tokenizer[1]}:\n")
                                     for key, value in tabledata[tokenizer[1]].items():
                                         sys.stdout.write(f"{key}: {value}\n")
-                    lmlist()
+                    tablelist()
                 case 'ADD':
                     if len(tokenizer) <= 1:
                         self.error('Key name hasn\'t been defined')
