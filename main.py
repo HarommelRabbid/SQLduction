@@ -16,6 +16,15 @@ class SQLduction:
     def delete(self, name):
         tables.remove(name)
         tabledata.pop(name, None)
+    def find(self, table, key):
+        return tabledata[table][key]
+    def add(self, table, key, val):
+        if val != None:
+            tabledata[table][key] = val
+        else:
+            tabledata[table][key] = None
+    def remove(self, table, key):
+        tabledata[table].pop(key, None)
 
 # Query tokenizer & parser
 class Queryduction:
